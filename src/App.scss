@@ -1,0 +1,10 @@
+@import "./index.scss";
+.S{
+    width: 100vw;
+    height: 100vh;
+    display: block;
+    &.Landing{
+        height: calc(100vh - 4.5rem);
+        margin-top: 4.5rem;
+    }
+}
