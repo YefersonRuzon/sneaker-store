@@ -1,5 +1,7 @@
 import React from 'react';
 import style from './Layout.module.scss';
+import { NavLink } from 'react-router-dom';
+
 const Layout = () => {
     return (
         <>
@@ -8,8 +10,8 @@ const Layout = () => {
                     Sneakers<span>.</span>
                 </div>
                 <ul>
-                    <li className={style.active}><a href="#">Home</a></li>
-                    <li><a href="#">Shop</a></li>
+                    <li className={style.active}><NavLink to="/">Home</NavLink></li>
+                    <li><NavLink to="/product">Shop</NavLink></li>
                     <li><a href="#">Products</a></li>
                 </ul>
                 <div className={style.BtnContainer}>
