@@ -10,11 +10,11 @@ a{
     background:$background;
     top: 0;
     display: grid;
-    grid-template-columns: 6fr 2fr .7fr;
+    grid-template-columns: 6fr 1.8fr .55fr;
     justify-content: space-between;
     align-items: center;
     padding: 0 1.5rem;
-    z-index: 10;
+    z-index: 30;
     .Logo{
         font-size: 1.1rem;
         font-weight: 600;
@@ -31,9 +31,31 @@ a{
             position: relative;
             display: flex;
             justify-content: center;
+            &::after{
+                content: "";
+                width: 0%;
+                height:2px;
+                background: $color-gray;
+                display: block;
+                position: absolute;
+                bottom: -.2rem;
+                transition: width ease .2s;
+            }
+            &:hover::after{
+                width: 60%;
+            }
             &.active{
                 a{
                     color: $color;
+                }
+                &::after{
+                    content: "";
+                    width: 60%;
+                    height:2px;
+                    background: $color;
+                    display: block;
+                    position: absolute;
+                    bottom: -.2rem;
                 }
             }
             a{
@@ -48,10 +70,29 @@ a{
             display: flex;
             align-items: center;
             &:first-child{
-                margin-right: 3rem;
+                margin-right: 2rem;
+                i{
+                    &::after{
+                        display: none;
+                    }
+                }
             } 
             i{ 
                 font-size: 1.2rem;
+                position: relative;
+                cursor: pointer;
+                &::after{
+                    content: "";
+                    width: 55%;
+                    height:50%;
+                    border-radius: 50%;
+                    background: red;
+                    display: block;
+                    position: absolute;
+                    top: -.1rem;
+                    right: -.1rem;
+                    transition: width ease .2s;
+                }
             }
         }
     }
